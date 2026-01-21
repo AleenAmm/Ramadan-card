@@ -93,8 +93,8 @@ export default function App() {
 
     if (navigator.share && navigator.canShare?.({ files: [file] })) {
       await navigator.share({
-        title: "Ramadan Mubarak",
-        text: "Ramadan Mubarak 🌙",
+        title: "مبارك عليك الشهر",
+        text: "مبارك عليك الشهر🤍",
         files: [file],
       });
     } else {
