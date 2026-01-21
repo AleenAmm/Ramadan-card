@@ -16,14 +16,14 @@
 }
 
 .button .button__text {
-  transform: translateX(22px);
+  transform: translateX(-57px);
   color: #fff;
   font-weight: 600;
 }
 
 .button .button__icon {
   position: absolute;
-  transform: translateX(90px);
+  transform: translateX(1px);
   height: 100%;
   width: 40px;
   background-color: #4c5b6e;
