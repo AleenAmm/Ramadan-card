@@ -2,6 +2,8 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import "./Button.css";
 
 const TEMPLATE_SRC = "/template/card.jpg";
+const LOGO_SRC = "/template/rawaa-logo.jpg";
+const IMAGE_SRC = "/template/decor.jpg";
 const FONT_FAMILY = '"Tajawal", "Noto Kufi Arabic", system-ui, sans-serif';
 
 function fitTextSize(ctx, text, maxWidth, startSize, minSize) {
@@ -13,7 +15,6 @@ function fitTextSize(ctx, text, maxWidth, startSize, minSize) {
   }
   return minSize;
 }
-
 
 export default function App() {
   const canvasRef = useRef(null);
@@ -103,6 +104,47 @@ export default function App() {
   };
 
   return (
+<>
+
+    <header style={{ 
+      backgroundColor: "#6b4f99", 
+      color: "white", 
+      padding: "20px 40px", 
+      boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+      position: "relative",
+      overflow: "visible"
+    }}>
+      <div dir="rtl" style={{ 
+        maxWidth: 700, 
+        margin: "0 auto", 
+        display: "flex", 
+        alignItems: "center", 
+        justifyContent: "space-between",
+        width: "100%"        
+      }}>
+        {/* Logo/Image on the right (for RTL) */}
+        <div style={{ display: "flex", alignItems: "center", gap: "12px" , marginRight: "-30%"}}>
+          <img 
+            src="/template/rawaa-logo.png"
+            alt="شعار" 
+            style={{ width: "20%", height: "30%" }}
+          />
+          <h1 style={{ margin: 0, fontSize: "24px", fontFamily: "Tajawal" }}>
+            بطاقات رمضانية
+          </h1>
+        </div>
+        <img 
+          src="/template/decor.png"
+          alt="زخرفة" 
+          style={{ width: "8%", height: "140%", position: "absolute", top: "-8px" ,left: "130px" }}
+        />
+      
+      </div>
+    </header>
+
+
+
+
     <div dir="rtl" style={{ maxWidth: 700, margin: "40px auto", padding: 16, fontFamily: "Tajawal", textAlign: "right" }}>
       <h2>أهلًا بك في مُصمم البطاقات الرمضانية</h2>
 
@@ -126,6 +168,7 @@ export default function App() {
 </button>
       </div>
     </div>
+    </>
   );
 }
 
