@@ -6,8 +6,8 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  border: 1px solid #4c5b6e;
-  background-color: #4c5b6e;
+  border: 1px solid #7f6380;
+  background-color: #7f6380;
   overflow: hidden;
 }
 
@@ -19,6 +19,7 @@
   transform: translateX(-57px);
   color: #fff;
   font-weight: 600;
+  font-family: "Tajawal"
 }
 
 .button .button__icon {
@@ -26,7 +27,7 @@
   transform: translateX(1px);
   height: 100%;
   width: 40px;
-  background-color: #4c5b6e;
+  background-color: #7f6380;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +39,7 @@
 }
 
 .button:hover {
-  background: #4c5b6e;
+  background: #7f6380;
 }
 
 .button:hover .button__text {
@@ -47,13 +48,113 @@
 
 .button:hover .button__icon {
   width: 148px;
-  transform: translateX(0);
+  transform: translateX(9px);
 }
 
 .button:active .button__icon {
-  background-color: #4c5b6e;
+  background-color: #7f6380;
 }
 
 .button:active {
-  border: 1px solid #4c5b6e;
+  border: 1px solid #7f6380;
 }
+
+
+.responsive-header {
+  background-color: #7f6380;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: visible;
+  width: 100%;
+}
+
+.header-container {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  right: 50px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 20%;
+  height: 30%;
+}
+
+.title {
+  margin: 0;
+  font-size: 24px;
+  font-family: Tajawal;
+}
+
+.decor {
+  position: absolute;
+  top: -8px;
+  right: 20px;  
+  left: auto;
+}
+
+
+
+/* laptop */
+@media screen and (min-width: 1024px) {
+
+  .title {
+    font-size: 20px;
+  }
+  .decor {
+    left: 110px;
+  }
+  .page-content{
+    margin: 40px auto;
+  }
+   
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+
+  .title {
+    font-size: 20px;
+  }
+  .decor {
+    left: 110px;
+  }
+  .page-content{
+    margin: "40px auto"
+  }
+   
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+
+  .header-content {
+    gap: 8px;
+    right: 50px;
+  }
+  .header-content{
+    right: 70px;
+  }
+  .title {
+    font-size: 16px;
+  }
+  .decor {
+    right: 280px;
+    left: auto;
+    top: -5px;
+    width: 13%;
+    height: 190%;
+  }
+
+}
+
