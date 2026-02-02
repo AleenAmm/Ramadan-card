@@ -198,7 +198,7 @@ useEffect(() => {
     
   />
   <label htmlFor="sender"> أود إضافة اسمي</label>
-  <br />    <br />
+  <br />   
 </form>
 
 
@@ -219,7 +219,7 @@ useEffect(() => {
       <input
         value={recipientName}
         onChange={(e) => setRecipientName(e.target.value)}
-        placeholder="مثال: ألين"
+        placeholder="مثال: سارة"
         style={{ width: "98%", padding: 12, borderRadius: 8 }}
       />
     </div>
