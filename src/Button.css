@@ -167,6 +167,12 @@ font-style: normal;
   h2{
     font-size: 112%;
   }
+  .page-content{
+    padding-top: 10;
+  }
+  .text-input{
+    width: 90%;
+  }
 
 }
 
