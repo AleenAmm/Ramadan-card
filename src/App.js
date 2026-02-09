@@ -216,7 +216,7 @@ useEffect(() => {
         onChange={(e) => setRecipientName(e.target.value)}
         placeholder="مثال: سارة"
         className="text-input"
-        style={{ width: "98%", padding: 12, borderRadius: 8,boxShadow: "0 2px 4px rgba(168, 85, 247, 0.1)" }}
+        style={{ width: "94%", padding: 12, borderRadius: 8,boxShadow: "0 2px 4px rgba(168, 85, 247, 0.1)" }}
       />
     </div>
   )}
@@ -231,7 +231,7 @@ useEffect(() => {
         onChange={(e) => setSenderName(e.target.value)}
         placeholder="مثال: ألين"
         className="text-input"
-        style={{ width: "98%", padding: 12, borderRadius: 8,boxShadow: "0 2px 4px rgba(168, 85, 247, 0.1)" }}
+        style={{ width: "94%", padding: 12, borderRadius: 8,boxShadow: "0 2px 4px rgba(168, 85, 247, 0.1)" }}
       />
     </div>
   )}
