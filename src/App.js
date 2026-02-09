@@ -4,14 +4,14 @@ import "./Button.css";
 const TEMPLATE_SRC = "/template/card.jpg";
 const LOGO_SRC = "/template/rawaa-logo.jpg";
 const IMAGE_SRC = "/template/decor.jpg";
-const FONT_FAMILY = '"Tajawal", "Noto Kufi Arabic", system-ui, sans-serif';
+const FONT_FAMILY = '"nawin-arabic","Tajawal", system-ui, sans-serif';
 const CARD_IMAGES = {
-  none: "/template/card_none.jpg",
-  sender: "/template/card_sender.jpg",
-  recipient: "/template/card_recipient.jpg",
-  both: "/template/card_both.jpg",
+  none: "/template/card_none.png",
+  sender: "/template/card_sender.png",
+  recipient: "/template/card_recipient.png",
+  both: "/template/card_both.png",
 };
-const FONT_SENDER = '"TS Kufidia","Tajawal", system-ui, sans-serif';
+const FONT_SENDER = '"nawin-arabic","TS Kufidia","Tajawal", system-ui, sans-serif';
 
 
 function fitTextSize(ctx, text, maxWidth, startSize, minSize) {
@@ -40,13 +40,13 @@ export default function App() {
   const [senderName, setSenderName] = useState("");
   const [recipientName, setRecipientName] = useState("");
 const senderLayout = {
-  x: 885,
-  y: 1670,
+  x: 2500,
+  y: 4500,
 };
 
 const recipientLayout = {
-  x: 830,
-  y: 865,
+  x: 2500,
+  y: 1840,
 };
 
 
@@ -55,7 +55,6 @@ const recipientLayout = {
   showRecipientInput
 );
 
-  // Change these numbers to match your template
   const layout = useMemo(() => ({
     x: 370,
     y: 1110,
@@ -86,16 +85,16 @@ useEffect(() => {
     ctx.textAlign = "center";
     ctx.textBaseline = "alphabetic";
     ctx.direction = "rtl";
-    ctx.fillStyle = "#7f6380";
+    ctx.fillStyle = "#fef8e6";
 
     // اسم المرسل
     if (showSenderInput && senderName.trim()) {
       const size = fitTextSize(
         ctx,
         senderName,
-        1000,
-        100,
-        50
+        1500,
+        180,
+        100
       );
       ctx.font = `${size}px ${FONT_SENDER}`;
       ctx.fillText(senderName, senderLayout.x, senderLayout.y);
@@ -106,16 +105,12 @@ useEffect(() => {
       const size = fitTextSize(
         ctx,
         recipientName,
-        1000,
-        135,
+        1270,
+        250,
         50
       );
-      ctx.font = `${size}px ${FONT_SENDER}`;
+      ctx.font = `700 ${size}px ${FONT_SENDER}`;
       ctx.textAlign = "right";
-        ctx.shadowColor = "#e1b160";
-  ctx.shadowBlur = 10;
-  ctx.shadowOffsetX = 5;
-  ctx.shadowOffsetY = 5;
       ctx.fillText(recipientName, recipientLayout.x, recipientLayout.y);
     }
 
@@ -169,14 +164,14 @@ useEffect(() => {
     <div className="header-content">
       <img src="/template/rawaa-logo.png" alt="شعار" className="logo" />
       <h1 className="title">بطاقات رمضانية</h1>
-      <img src="/template/decor.png" alt="زخرفة" className="decor" />
+      <img src="/template/decor2.png" alt="زخرفة" className="decor" />
     </div>
   </div>
 </header>
 
     <div dir="rtl"  className="page-content" style={{ maxWidth: 700, padding: 16, fontFamily: "Tajawal", textAlign: "right" }}>
-      <h2>أهلًا بك في مُصمم البطاقات الرمضانية</h2>
-
+      <h2>مرحبًا بك في مُصمم البطاقات الرمضانية</h2>
+      
       <form>
   <input
     type="checkbox"
@@ -206,7 +201,7 @@ useEffect(() => {
   style={{
     width: "98%",
     display: "flex",
-    flexWrap: "wrap", // يسمح بالانتقال لسطر جديد
+    flexWrap: "wrap",
     gap: 12,
     marginBottom: 16,
   }}

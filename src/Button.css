@@ -1,3 +1,5 @@
+@import url("https://use.typekit.net/kxw7duf.css");
+
 /* From Uiverse.io by andrew-demchenk0 */ 
 .button {
   position: relative;
@@ -98,11 +100,18 @@
 
 .decor {
   position: absolute;
-  top: -8px;
+  top: -11px;
   right: 20px;  
   left: auto;
+  width: 15%;
+  height: 184%;
 }
 
+.nawwin{
+font-family: "nawin-arabic", "Tajawal";
+font-weight: 700;
+font-style: normal;
+}
 
 
 /* laptop */
