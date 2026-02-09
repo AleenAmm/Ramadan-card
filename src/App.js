@@ -169,7 +169,7 @@ useEffect(() => {
   </div>
 </header>
 
-    <div dir="rtl"  className="page-content" style={{ maxWidth: 700, padding: 16, fontFamily: "Tajawal", textAlign: "right" }}>
+    <div dir="rtl"  className="page-content" style={{ maxWidth: 700, paddingLeft:16, paddingRight:16, fontFamily: "Tajawal", textAlign: "right" }}>
       <h2>مرحبًا بك في مُصمم البطاقات الرمضانية</h2>
       
       <form>
