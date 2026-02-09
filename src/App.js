@@ -204,6 +204,7 @@ useEffect(() => {
     flexWrap: "wrap",
     gap: 12,
     marginBottom: 16,
+    marginTop:10
   }}
 >
   {showRecipientInput && (
