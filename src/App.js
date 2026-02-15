@@ -74,7 +74,7 @@ useEffect(() => {
   img.src = selectedImage;
 
   img.onload = () => {
-    
+    alert(`حجم الصورة: ${img.width} × ${img.height}`);
     canvas.width = img.width;
     canvas.height = img.height;
 
