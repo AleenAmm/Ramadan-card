@@ -74,12 +74,17 @@ useEffect(() => {
   img.src = selectedImage;
 
   img.onload = () => {
-    alert(`حجم الصورة: ${img.width} × ${img.height}`);
-    canvas.width = img.width;
-    canvas.height = img.height;
+    // ✅ تصغير الصورة لحجم آمن لجميع الأجهزة
+    const MAX_SIZE = 2048; // حجم آمن لجميع الأجهزة
+    const scale = MAX_SIZE / Math.max(img.width, img.height);
+    
+    canvas.width = img.width * scale;
+    canvas.height = img.height * scale;
+
+    console.log(`✅ تم تصغير الصورة من ${img.width}×${img.height} إلى ${canvas.width}×${canvas.height}`);
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(img, 0, 0);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
     ctx.save();
     ctx.textAlign = "center";
@@ -87,34 +92,39 @@ useEffect(() => {
     ctx.direction = "rtl";
     ctx.fillStyle = "#fef8e6";
 
-    // اسم المرسل
+    // اسم المرسل - مع التصغير
     if (showSenderInput && senderName.trim()) {
       const size = fitTextSize(
         ctx,
         senderName,
-        1500,
-        180,
-        100
+        1500 * scale,  // ✅ ضرب في scale
+        180 * scale,
+        100 * scale
       );
       ctx.font = `${size}px ${FONT_SENDER}`;
-      ctx.fillText(senderName, senderLayout.x, senderLayout.y);
+      ctx.fillText(senderName, 2500 * scale, 4500 * scale);
     }
 
-    // اسم المُرسل إليه
+    // اسم المُرسل إليه - مع التصغير
     if (showRecipientInput && recipientName.trim()) {
       const size = fitTextSize(
         ctx,
         recipientName,
-        1270,
-        250,
-        50
+        1270 * scale,  // ✅ ضرب في scale
+        250 * scale,
+        50 * scale
       );
       ctx.font = `700 ${size}px ${FONT_SENDER}`;
       ctx.textAlign = "right";
-      ctx.fillText(recipientName, recipientLayout.x, recipientLayout.y);
+      ctx.fillText(recipientName, 2500 * scale, 1840 * scale);
     }
 
     ctx.restore();
+  };
+
+  img.onerror = () => {
+    console.error("❌ فشل تحميل الصورة");
+    alert("عذراً، حدث خطأ في تحميل الصورة");
   };
 }, [
   senderName,
